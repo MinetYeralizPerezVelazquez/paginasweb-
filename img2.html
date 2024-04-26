@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <title>Encuesta de Presentación - Sustentabilidad y Medio Ambiente</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        header {
+            text-align: center;
+            background-color: #660066; 
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+        }
+        h1 {
+            font-family: "Arial", sans-serif;
+            color: white; 
+            font-size: 36px;
+            text-transform: uppercase; 
+        }
+        .form-container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: #f9f9f9; 
+            padding: 20px;
+            border-radius: 10px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        .options-container {
+            display: flex;
+            flex-direction: column;
+        }
+        .option {
+            margin-bottom: 10px;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        .btn-container {
+            text-align: center;
+        }
+        .btn {
+            padding: 10px 20px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 5px; 
+            background-color: #660066; 
+            color: white; 
+            cursor: pointer;
+            transition: background-color 0.3s; 
+        }
+        .btn:hover {
+            background-color: #4d004d; 
+        }
+        .success-message {
+            color: #006600; 
+            font-weight: bold;
+            text-align: center;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Encuesta de Presentación</h1>
+        <div class="navbar">
+            <a href="index.html">Pagina Principal</a>
+            <a href="pag1.html">Acerca De</a>
+            <a href="pag2.html">Promoveer</a>
+            <a href="pag3.html">Beneficios</a>
+            <a href="pag4.html">Aliados</a>
+            <a href="pag5.html">Noticias</a>
+            <a href="pag6.html">Riesgos</a>
+        </div>
+   
+    </header>
+
+    <div class="form-container">
+        <form id="survey-form">
+            <div class="form-group">
+                <label for="presentation">¿Qué te pareció la presentación?</label>
+                <div class="options-container">
+                    <div class="option">
+                        <input type="radio" id="excellent" name="presentation" value="excelente">
+                        <label for="excellent">Excelente</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="good" name="presentation" value="bueno">
+                        <label for="good">Bueno</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="average" name="presentation" value="regular">
+                        <label for="average">Regular</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="poor" name="presentation" value="malo">
+                        <label for="poor">Malo</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="content">¿Qué te pareció el contenido?</label>
+                <div class="options-container">
+                    <div class="option">
+                        <input type="radio" id="excellent-content" name="content" value="excelente">
+                        <label for="excellent-content">Excelente</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="good-content" name="content" value="bueno">
+                        <label for="good-content">Bueno</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="average-content" name="content" value="regular">
+                        <label for="average-content">Regular</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="poor-content" name="content" value="malo">
+                        <label for="poor-content">Malo</label>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-container">
+                <button type="submit" class="btn">Enviar</button>
+            </div>
+        </form>
+        <p class="success-message" id="success-message">Enviado con éxito</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Sustentabilidad y Medio Ambiente</p>
+    </footer>
+
+    <script>
+        document.getElementById('survey-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita el envío predeterminado del formulario
+
+            // Simulación de envío exitoso del formulario
+            document.getElementById('success-message').style.display = 'block';
+
+            // Redireccionamiento a la página principal después de 3 segundos
+            setTimeout(function() {
+                window.location.href = "index.html";
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
